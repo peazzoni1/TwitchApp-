@@ -1,0 +1,40 @@
+<html ng-app="twitchApp">
+
+<!DOCTYPE HTML> 
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,800,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body id="body">
+  <header> 
+    Twitch User Status
+  </header> 
+  <div id="userlist">
+    <div class="tabMenu">
+      <ul class="nav nav-pills">
+        <li> <a href ng-click="tab = 1">All</a></li>
+        <li> <a href ng-click="tab = 2">Online</a></li>
+        <li> <a href ng-click="tab = 3">Offline</a></li>
+      </ul>
+    </div>
+    <div ng-controller="UserCtrl as users">
+      <form ng-submit="users.getUser()">
+      <input type="text" class="form-control"ng-model="users.newUser" placeholder="type name here">
+      <input class="btn btn-primary" type="submit" value="Add User">
+    </form>
+      <input type="text" class="form-control" placeholder="search" ng-model="search.name">
+        <table class="table table-striped">
+          <tbody >
+          <tr ng-repeat="data in users.userData | filter:search.name">
+            <td><img src="{{data.logo}}"></td>       
+            <td>{{data.name}}</td> 
+            <td>{{data.game}}</td> 
+          </tr>
+          </tbody>
+          </table> 
+      
+    </div>
+  </div> 
+</body>
+
+</html>
