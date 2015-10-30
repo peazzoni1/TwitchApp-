@@ -3,11 +3,16 @@
 <!DOCTYPE HTML> 
 <head>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,800,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body id="body">
   <header> 
-    Twitch User Status
+    Create A TwitchTV Favorite's List
   </header> 
   <div id="userlist">
     <div class="tabMenu">
@@ -28,13 +33,15 @@
           <tr ng-repeat="data in users.userData | filter:search.name">
             <td><img src="{{data.logo}}"></td>       
             <td>{{data.name}}</td> 
-            <td>{{data.game}}</td> 
+            <td>{{data.game}}</td>
+            <td><i class="{{data.status}}"></i></td>
           </tr>
           </tbody>
           </table> 
       
     </div>
   </div> 
+    <script src="app.js"></script>
 </body>
 
 </html>

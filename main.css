@@ -1,5 +1,5 @@
 #body {
-  background-color: #ff816a;
+  background-color: #6acbff;
 }
 
 header { 
@@ -56,4 +56,13 @@ li {
   border-radius: 3px;
   width: 75px;
   margin: 5px;
+}
+
+
+.fa.fa-check { 
+color: limegreen;
+}
+
+.fa.fa-exclamation { 
+color: red;
 }
